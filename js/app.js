@@ -78,7 +78,7 @@
     const page = el('div', 'page');
     page.append(A.topbar(`${t.icon} ${t.ko} 친구들 ${gi + 1}<small>${t.en} Friends ${gi + 1}</small>`, () => A.themePage(t), false));
     const words = el('div', 'wordstrip', g.map(w => `<button class="chip">${img(w)}<span lang="en">${breakable(w.en)}</span></button>`).join(''));
-    words.querySelectorAll('.chip').forEach((c, i) => { c.onclick = () => A.say(g[i]); });
+    words.querySelectorAll('.chip').forEach((c, i) => { c.onclick = () => A.sayBoth(g[i]); });
     page.append(words);
     const list = el('div', 'games');
     GAME_ORDER.forEach(id => {
